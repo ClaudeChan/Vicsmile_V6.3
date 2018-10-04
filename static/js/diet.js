@@ -169,7 +169,7 @@ function createNutritionList(result) {
         lookup[nutrPath[i].nutrient_id] = nutrPath[i];
     }
     resultList.push(lookup)
-   // console.log(lookup)
+    // console.log(lookup)
     // Prints the wanted search results into the temporary DOM's elements
     // updateNutrListElement(".calories", lookup[208], temp);
     // updateNutrListElement(".fat", lookup[204], temp);
@@ -228,42 +228,42 @@ $("#submit").click(function () {
         // getNutritionalInformation(foodId);
         for (var i = 0; i < resultList.length; i++) {
             var validation = 0
-            if(resultList[i][203] == null) {
+            if (resultList[i][203] == null) {
                 protein += validation
             } else {
                 protein += parseFloat(resultList[i][203].value)
             }
-            if(resultList[i][269] == null) {
+            if (resultList[i][269] == null) {
                 sugars += validation
             } else {
                 sugars += parseFloat(resultList[i][269].value)
             }
-            if(resultList[i][301] == null) {
+            if (resultList[i][301] == null) {
                 calcium += validation
             } else {
                 calcium += parseFloat(resultList[i][301].value)
             }
-            if(resultList[i][305] == null) {
+            if (resultList[i][305] == null) {
                 phosphorus += validation
             } else {
                 phosphorus += parseFloat(resultList[i][305].value)
             }
-            if(resultList[i][318] == null) {
+            if (resultList[i][318] == null) {
                 vitamin_A += validation
             } else {
                 vitamin_A += parseFloat(resultList[i][318].value)
             }
-            if(resultList[i][415] == null) {
+            if (resultList[i][415] == null) {
                 vitamin_B6 += validation
             } else {
-                 vitamin_B6 += parseFloat(resultList[i][415].value)
+                vitamin_B6 += parseFloat(resultList[i][415].value)
             }
-            if(resultList[i][418] == null) {
+            if (resultList[i][418] == null) {
                 vitamin_B12 += validation
             } else {
                 vitamin_B12 += parseFloat(resultList[i][418].value)
             }
-            if(resultList[i][401] == null) {
+            if (resultList[i][401] == null) {
                 vitamin_C += validation
             } else {
                 vitamin_C += parseFloat(resultList[i][401].value)
@@ -273,85 +273,85 @@ $("#submit").click(function () {
     });
 
     if (sugars != 0) {
-        var gprotein = (protein - rProtein)/rProtein * 100
-        var gcalcium = (calcium - rCalcium)/rCalcium * 100
-        var gsugars = (sugars - rSugar)/rSugar * 100
-        var gphosphorus = (phosphorus - rPhosphor)/rPhosphor * 100
-        var gvitamin_A = (vitamin_A - rVitamin_A)/rVitamin_A * 100
-        var gvitamin_B6 = (vitamin_B6 - rVitamin_B6)/rVitamin_B6 * 100
-        var gvitamin_B12 = (vitamin_B12 - rVitamin_B12)/rVitamin_B12 * 100
-        var gvitamin_C = (vitamin_C - rVitamin_C)/rVitamin_C * 100
+        var gprotein = (protein - rProtein) / rProtein * 100
+        var gcalcium = (calcium - rCalcium) / rCalcium * 100
+        var gsugars = (sugars - rSugar) / rSugar * 100
+        var gphosphorus = (phosphorus - rPhosphor) / rPhosphor * 100
+        var gvitamin_A = (vitamin_A - rVitamin_A) / rVitamin_A * 100
+        var gvitamin_B6 = (vitamin_B6 - rVitamin_B6) / rVitamin_B6 * 100
+        var gvitamin_B12 = (vitamin_B12 - rVitamin_B12) / rVitamin_B12 * 100
+        var gvitamin_C = (vitamin_C - rVitamin_C) / rVitamin_C * 100
 
         $("#protein").text("Protein:  " + protein.toFixed(2) + " g")
-if (gprotein >= 0) {
-    $("#gprotein").text(gprotein.toFixed(2) + "%")
-    $("#gprotein").css({color: "green"})
-} else {
-    $("#gprotein").text(gprotein.toFixed(2) + "%")
-    $("#gprotein").css({color: "red"})
-}
+        if (gprotein >= 0) {
+            $("#gprotein").text(gprotein.toFixed(2) + "%")
+            $("#gprotein").css({color: "green"})
+        } else {
+            $("#gprotein").text(gprotein.toFixed(2) + "%")
+            $("#gprotein").css({color: "red"})
+        }
 
-$("#sugars").text("Sugar:  " + sugars.toFixed(2) + " g")
-if (gsugars >= 0) {
-    $("#gsugars").text(gsugars.toFixed(2) + "%")
-    $("#gsugars").css({color: "green"})
-} else {
-    $("#gsugars").text(gsugars.toFixed(2) + "%")
-    $("#gsugars").css({color: "red"})
-}
+        $("#sugars").text("Sugar:  " + sugars.toFixed(2) + " g")
+        if (gsugars >= 0) {
+            $("#gsugars").text(gsugars.toFixed(2) + "%")
+            $("#gsugars").css({color: "green"})
+        } else {
+            $("#gsugars").text(gsugars.toFixed(2) + "%")
+            $("#gsugars").css({color: "red"})
+        }
 
-$("#calcium").text("Calcium:  " + calcium.toFixed(2) + " mg")
-if (gcalcium >= 0) {
-    $("#gcalcium").text(gcalcium.toFixed(2) + "%")
-    $("#gcalcium").css({color: "green"})
-} else {
-    $("#gcalcium").text(gcalcium.toFixed(2) + "%")
-    $("#gcalcium").css({color: "red"})
-}
-$("#phosphorus").text("Phosphorus:  " + phosphorus.toFixed(2) + " mg")
-if (gphosphorus >= 0) {
-    $("#gphosphorus").text(gphosphorus.toFixed(2) + "%")
-    $("#gphosphorus").css({color: "green"})
-} else {
-    $("#gphosphorus").text(gphosphorus.toFixed(2) + "%")
-    $("#gphosphorus").css({color: "red"})
-}
+        $("#calcium").text("Calcium:  " + calcium.toFixed(2) + " mg")
+        if (gcalcium >= 0) {
+            $("#gcalcium").text(gcalcium.toFixed(2) + "%")
+            $("#gcalcium").css({color: "green"})
+        } else {
+            $("#gcalcium").text(gcalcium.toFixed(2) + "%")
+            $("#gcalcium").css({color: "red"})
+        }
+        $("#phosphorus").text("Phosphorus:  " + phosphorus.toFixed(2) + " mg")
+        if (gphosphorus >= 0) {
+            $("#gphosphorus").text(gphosphorus.toFixed(2) + "%")
+            $("#gphosphorus").css({color: "green"})
+        } else {
+            $("#gphosphorus").text(gphosphorus.toFixed(2) + "%")
+            $("#gphosphorus").css({color: "red"})
+        }
 
-$("#vitamin_A").text("Vitamin A:  " + vitamin_A.toFixed(2) + " ug")
-if (gvitamin_A >= 0) {
-    $("#gvitamin_A").text(gvitamin_A.toFixed(2) + "%")
-    $("#gvitamin_A").css({color: "green"})
-} else {
-    $("#gvitamin_A").text(gvitamin_A.toFixed(2) + "%")
-    $("#gvitamin_A").css({color: "red"})
-}
+        $("#vitamin_A").text("Vitamin A:  " + vitamin_A.toFixed(2) + " ug")
+        if (gvitamin_A >= 0) {
+            $("#gvitamin_A").text(gvitamin_A.toFixed(2) + "%")
+            $("#gvitamin_A").css({color: "green"})
+        } else {
+            $("#gvitamin_A").text(gvitamin_A.toFixed(2) + "%")
+            $("#gvitamin_A").css({color: "red"})
+        }
 
-$("#vitamin_B6").text("Vitamin B6:  " + vitamin_B6.toFixed(2) + " mg")
-if (gvitamin_B6 >= 0) {
-    $("#gvitamin_B6").text(gvitamin_B6.toFixed(2) + "%")
-    $("#gvitamin_B6").css({color: "green"})
-} else {
-    $("#gvitamin_B6").text(gvitamin_B6.toFixed(2) + "%")
-    $("#gvitamin_B6").css({color: "red"})
-}
-$("#vitamin_B12").text("Vitamin B12:  " + vitamin_B12.toFixed(2) + " ug")
-if (gvitamin_B12 >= 0) {
-    $("#gvitamin_B12").text(gvitamin_B12.toFixed(2) + "%")
-    $("#gvitamin_B12").css({color: "green"})
-} else {
-    $("#gvitamin_B12").text(gvitamin_B12.toFixed(2) + "%")
-    $("#gvitamin_B12").css({color: "red"})
-}
-$("#vitamin_C").text("Vitamin C:  " + vitamin_C.toFixed(2) + " mg")
-if (gvitamin_C >= 0) {
-    $("#gvitamin_C").text(gvitamin_C.toFixed(2) + "%")
-    $("#gvitamin_C").css({color: "green"})
-} else {
-    $("#gvitamin_C").text(gvitamin_C.toFixed(2) + "%")
-    $("#gvitamin_C").css({color: "red"})
-}
+        $("#vitamin_B6").text("Vitamin B6:  " + vitamin_B6.toFixed(2) + " mg")
+        if (gvitamin_B6 >= 0) {
+            $("#gvitamin_B6").text(gvitamin_B6.toFixed(2) + "%")
+            $("#gvitamin_B6").css({color: "green"})
+        } else {
+            $("#gvitamin_B6").text(gvitamin_B6.toFixed(2) + "%")
+            $("#gvitamin_B6").css({color: "red"})
+        }
+        $("#vitamin_B12").text("Vitamin B12:  " + vitamin_B12.toFixed(2) + " ug")
+        if (gvitamin_B12 >= 0) {
+            $("#gvitamin_B12").text(gvitamin_B12.toFixed(2) + "%")
+            $("#gvitamin_B12").css({color: "green"})
+        } else {
+            $("#gvitamin_B12").text(gvitamin_B12.toFixed(2) + "%")
+            $("#gvitamin_B12").css({color: "red"})
+        }
+        $("#vitamin_C").text("Vitamin C:  " + vitamin_C.toFixed(2) + " mg")
+        if (gvitamin_C >= 0) {
+            $("#gvitamin_C").text(gvitamin_C.toFixed(2) + "%")
+            $("#gvitamin_C").css({color: "green"})
+        } else {
+            $("#gvitamin_C").text(gvitamin_C.toFixed(2) + "%")
+            $("#gvitamin_C").css({color: "red"})
+        }
     }
-    $("#information").css('display','block')
+    $("#information").css('display', 'block')
     protein = 0
     sugars = 0
     calcium = 0
@@ -373,8 +373,7 @@ $("#clear").click(function () {
         $(this).text('')
     })
     $(".querylist-result").children().remove()
-    $("#information").css('display','none');
-
+    $("#information").css('display', 'none');
 
 
 })
