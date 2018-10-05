@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Clinics, Postcode
 from math import sin, cos, sqrt, atan2, radians
 from django.forms import Form, fields
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 # def result(request):
@@ -18,6 +19,7 @@ from django.forms import Form, fields
 # Users can search clinics by the combination of options.
 
 
+@csrf_exempt
 def search(request):
     # retrieve the clinic info from the database
     clinic_list = Clinics.objects.all().values()

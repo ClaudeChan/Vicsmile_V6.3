@@ -224,9 +224,11 @@ var rSugar = 30
 $("#submit").click(function () {
 
     $(".querylist li").each(function () {
-        // var foodId = $(this).attr("data-id");
-        // getNutritionalInformation(foodId);
-        for (var i = 0; i < resultList.length; i++) {
+        var foodId = $(this).attr("data-id");
+        getNutritionalInformation(foodId);
+    });
+
+    for (var i = 0; i < resultList.length; i++) {
             var validation = 0
             if (resultList[i][203] == null) {
                 protein += validation
@@ -270,7 +272,6 @@ $("#submit").click(function () {
             }
         }
         resultList = []
-    });
 
     if (sugars != 0) {
         var gprotein = (protein - rProtein) / rProtein * 100
@@ -396,10 +397,10 @@ function printResult(searchValue) {
 };
 
 // Place the nutritional value and unit inside the temporary element for the DOM
-function updateNutrListElement(element, nutrient, temp) {
-    var nutrLevel = +nutrient.value
-    temp.find(element).text(nutrLevel.toFixed(1) + nutrient.unit);
-};
+// function updateNutrListElement(element, nutrient, temp) {
+//     var nutrLevel = +nutrient.value
+//     temp.find(element).text(nutrLevel.toFixed(1) + nutrient.unit);
+// };
 
 // Provides error feedback if no results were found
 function showError() {
