@@ -1,5 +1,5 @@
-
 from django.db import models
+
 
 # is the model for clinics database
 class Clinics(models.Model):
